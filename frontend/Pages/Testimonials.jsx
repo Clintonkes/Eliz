@@ -4,57 +4,75 @@ import Footer from '../components/Footer'
 import ScrollReveal from '../components/ScrollReveal'
 import { Link } from 'react-router-dom'
 
-export default function Testimonials() {
-  const testimonials = [
-    { id: 1, name: "Sarah Johnson", content: "E Liz LLC cleaned my home today — they did a terrific job. They even moved the furniture to be sure the floors were cleaned — they really paid attention to detail. Thank you!", rating: 5 },
-    { id: 2, name: "Michael Chen", content: "We would like to thank E Liz LLC for an outstanding effort on this recently completed project. The work was completed on time and exceeded our expectations.", rating: 5 },
-    { id: 3, name: "Emily Rodriguez", content: "After our construction project, E Liz LLC cleaned it all up perfectly. They got rid of all the dust and debris. Saved us so much time and stress!", rating: 5 },
-    { id: 4, name: "David Thompson", content: "Reliable, trustworthy, and excellent quality. We've been using them for monthly maintenance and couldn't be happier with the consistent results.", rating: 4 },
-    { id: 5, name: "Lisa Williams", content: "The move-out cleaning they provided was incredible. Our landlord was impressed, and we got our full deposit back! Highly recommend their services.", rating: 5 },
-    { id: 6, name: "Robert Kim", content: "Professional team, great communication, and fantastic results. They showed up on time and left our office spotless. Five stars all around!", rating: 5 }
-  ]
+const TESTIMONIALS = [
+  { name: 'Sarah M.', role: 'Homeowner · Rancho Santa Margarita', avatar: 'photo-1534528741775-53994a69daeb', stars: 5, text: "E Liz LLC cleaned my home today — they did a terrific job. They even moved the furniture to make sure the floors were cleaned — they really paid attention to detail. Thank you!", featured: true },
+  { name: 'James R.', role: 'Business Owner · Irvine', avatar: 'photo-1472099645785-5658abf4ff4e', stars: 5, text: "Professional, punctual, and absolutely meticulous. E Liz handles our office cleaning and the results are consistently excellent. Our team loves coming into a clean workspace every morning." },
+  { name: 'Emily K.', role: 'Property Manager · Mission Viejo', avatar: 'photo-1580489944761-15a19d654956', stars: 5, text: "I've tried several cleaning services and none compare to E Liz. The move-out clean was exceptional — my landlord was amazed. I got my full deposit back!", featured: true },
+  { name: 'David T.', role: 'Homeowner · Laguna Hills', stars: 5, text: "Reliable, trustworthy, and excellent quality. We've been using them for monthly maintenance and couldn't be happier with the consistent results every single visit." },
+  { name: 'Lisa W.', role: 'Landlord · Lake Forest', stars: 5, text: "The recurring service has been a game-changer. My tenants love it and I never have to worry about the condition of the units. E Liz is truly a premium service." },
+  { name: 'Robert K.', role: 'Office Manager · Aliso Viejo', stars: 5, text: "Professional team, great communication, and fantastic results. They showed up on time and left our office spotless. Five stars all around — I recommend them to everyone." },
+]
 
+export default function Testimonials() {
   return (
     <>
       <Navbar />
-      <section className="relative bg-navy-900 text-white py-20 lg:py-28 overflow-hidden">
-        <div className="absolute inset-0">
-          <img src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=1920&q=80" alt="" className="w-full h-full object-cover opacity-10" />
-          <div className="absolute inset-0 bg-gradient-to-b from-navy-900/60 to-navy-900" />
-        </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="text-brand-400 font-semibold text-sm uppercase tracking-[0.2em]">Testimonials</span>
-          <h1 className="text-4xl lg:text-5xl font-bold mt-4 mb-4">What Our Clients Say</h1>
-          <p className="text-gray-400 max-w-2xl mx-auto">Don't just take our word for it — hear from our satisfied customers.</p>
-        </div>
-      </section>
 
-      <section className="py-20 lg:py-24 bg-brand-50">
+      {/* Page Hero */}
+      <div className="page-hero">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="section-label justify-center mb-4">Client Stories</div>
+          <h1 className="section-title" style={{ fontSize: 'clamp(36px, 4.5vw, 62px)' }}>What Our Clients Say</h1>
+          <p className="section-subtitle">Don't take our word for it — hear from the people we've served.</p>
+        </div>
+      </div>
+
+      {/* Stats bar */}
+      <div style={{ background: 'rgba(201,169,110,0.05)', borderBottom: '1px solid rgba(201,169,110,0.10)' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+          <div className="grid grid-cols-3 gap-6 text-center">
+            {[{ num: '5.0', label: 'Star Rating' }, { num: '200+', label: 'Reviews' }, { num: '100%', label: 'Satisfaction' }].map(s => (
+              <div key={s.label}>
+                <div className="stat-num" style={{ fontSize: 40 }}>{s.num}</div>
+                <div className="text-[12px] font-semibold uppercase tracking-widest mt-1" style={{ color: '#6b7280' }}>{s.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Testimonials grid */}
+      <section className="py-20 lg:py-28" style={{ background: 'var(--bg-base)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.map((t, i) => (
-              <ScrollReveal key={t.id}>
-                <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
-                  <div className="flex gap-1 mb-4">
-                    {[...Array(5)].map((_, j) => (
-                      <span key={j} className={`text-lg ${j < t.rating ? 'text-brand-500' : 'text-gray-200'}`}>★</span>
-                    ))}
-                  </div>
-                  <p className="text-gray-600 mb-6 italic leading-relaxed text-sm">"{t.content}"</p>
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 bg-brand-100 rounded-full flex items-center justify-center text-brand-600 font-bold">
-                      <span>{t.name[0]}</span>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {TESTIMONIALS.map((t, i) => (
+              <ScrollReveal key={t.name} style={{ transitionDelay: `${i * 70}ms` }}>
+                <div className={t.featured ? 'tcard-featured' : 'tcard'} style={{ height: '100%' }}>
+                  {t.featured && (
+                    <div className="absolute top-0 right-0 text-[10.5px] font-bold tracking-widest uppercase px-4 py-2 rounded-bl-xl rounded-tr-[18px]" style={{ background: 'rgba(201,169,110,0.20)', color: '#c9a96e' }}>Featured</div>
+                  )}
+                  <div className="flex gap-1 mb-5">{Array(t.stars).fill(0).map((_, si) => <span key={si} style={{ color: '#c9a96e', fontSize: 16 }}>★</span>)}</div>
+                  <p className="text-[14.5px] leading-relaxed mb-6" style={{ color: '#c9d0db' }}>"{t.text}"</p>
+                  <div className="flex items-center gap-3 mt-auto">
+                    {t.avatar ? (
+                      <img src={`https://images.unsplash.com/${t.avatar}?w=80&h=80&fit=crop&auto=format`} alt={t.name} className="w-11 h-11 rounded-full object-cover" style={{ border: '2px solid rgba(201,169,110,0.25)' }} />
+                    ) : (
+                      <div className="w-11 h-11 rounded-full flex items-center justify-center font-bold text-[16px]" style={{ background: 'rgba(201,169,110,0.15)', color: '#c9a96e', border: '2px solid rgba(201,169,110,0.25)' }}>{t.name[0]}</div>
+                    )}
+                    <div>
+                      <div className="text-[14px] font-semibold" style={{ color: '#f2f4f8' }}>{t.name}</div>
+                      {t.role && <div className="text-[12px]" style={{ color: '#6b7280' }}>{t.role}</div>}
                     </div>
-                    <span className="font-semibold text-navy-700">{t.name}</span>
                   </div>
                 </div>
               </ScrollReveal>
             ))}
           </div>
-          <ScrollReveal>
-            <div className="text-center mt-12">
-              <Link to="/booking" className="btn-outline">Join Our Happy Customers</Link>
-            </div>
+
+          {/* CTA */}
+          <ScrollReveal className="text-center mt-16">
+            <p className="text-[16px] mb-6" style={{ color: '#6b7280' }}>Ready to join our growing list of happy clients?</p>
+            <Link to="/booking" className="btn-primary">Book a Cleaning</Link>
           </ScrollReveal>
         </div>
       </section>

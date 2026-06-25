@@ -1,53 +1,38 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import ScrollReveal from '../components/ScrollReveal'
-import { Link } from 'react-router-dom'
 
-const serviceList = [
-  {
-    img: "https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=600&q=80",
-    title: "Residential Cleaning",
-    desc: "Complete home cleaning including dusting, vacuuming, mopping, and sanitizing all surfaces."
-  },
-  {
-    img: "https://images.unsplash.com/photo-1761689502577-0013be84f1bf?w=600&q=80",
-    title: "Commercial Cleaning",
-    desc: "Professional office cleaning, desk sanitization, floor care, and common area maintenance."
-  },
-  {
-    img: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80",
-    title: "Deep Cleaning",
-    desc: "Thorough deep clean of neglected areas, appliances, baseboards, and hard-to-reach spots."
-  },
-  {
-    img: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80",
-    title: "Move In/Out Service",
-    desc: "Comprehensive cleaning for property transitions, leaving every space spotless."
-  },
-  {
-    img: "https://images.unsplash.com/photo-1667052673589-b088f6cfd598?w=600&q=80",
-    title: "Post-Construction",
-    desc: "Specialized cleanup after renovations, removing dust, debris, and construction residue."
-  },
-  {
-    img: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80",
-    title: "Recurring Maintenance",
-    desc: "Scheduled weekly, bi-weekly, or monthly cleaning to keep your space consistently fresh."
-  }
+const SERVICES = [
+  { cls: 'bento-1', img: 'photo-1513694203232-719a280e022f', label: 'Residential', title: 'Home Cleaning', desc: 'Meticulous, detail-oriented cleaning for every room in your home.' },
+  { cls: 'bento-2', img: 'photo-1497366216548-37526070297c', label: 'Commercial', title: 'Office & Commercial', desc: 'Professional environments stay pristine and productive.' },
+  { cls: 'bento-3', img: 'photo-1556909011-8b5df82a9c95', label: 'Deep Clean', title: 'Deep Cleaning', desc: 'Every corner addressed. Every surface restored.' },
+  { cls: 'bento-4', img: 'photo-1560185007-cde436f6a4d0', label: 'Move In/Out', title: 'Move In / Out', desc: 'Leave the old place spotless. Arrive to a fresh one.' },
+  { cls: 'bento-5', img: 'photo-1504307651254-35680f356dfd', label: 'Post-Construction', title: 'Post-Construction', desc: 'Construction dust and debris cleared efficiently.' },
+  { cls: 'bento-6', img: 'photo-1615529182904-14819c35db37', label: 'Recurring', title: 'Recurring Maintenance', desc: 'Scheduled weekly, bi-weekly, or monthly service.' },
 ]
 
-const testimonials = [
-  { name: "Sarah Johnson", content: "E Liz LLC cleaned my home today — they did a terrific job. They really paid attention to detail. Thank you!", rating: 5, img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" },
-  { name: "Michael Chen", content: "Best cleaning service I've ever used. They pay attention to every detail and our home has never looked better.", rating: 5, img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" },
-  { name: "Emily Rodriguez", content: "After our construction project, E Liz LLC cleaned it all up perfectly. Saved us so much time and stress!", rating: 5, img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" },
+const STATS = [
+  { num: '500+', label: 'Happy Clients' },
+  { num: '8+', label: 'Years Experience' },
+  { num: '100%', label: 'Satisfaction Rate' },
+  { num: '5★', label: 'Average Rating' },
 ]
 
-const whyChoose = [
-  { title: "Professional Staff", desc: "Our team is trained, experienced, and committed to delivering exceptional cleaning results every time." },
-  { title: "Quality Products", desc: "We use eco-friendly, hospital-grade cleaning products that are safe for your family, pets, and environment." },
-  { title: "Certified Cleaners", desc: "All our cleaners are fully certified, background-checked, and trained in the latest cleaning techniques." },
-  { title: "Fair & Transparent Pricing", desc: "Competitive pricing with no hidden fees. Get premium cleaning services at rates that work for your budget." },
+const WHY = [
+  { n: '01', title: 'Fully Insured & Bonded', desc: 'Complete peace of mind. Our team is fully insured and bonded on every job.' },
+  { n: '02', title: 'Eco-Friendly Products', desc: 'We use green-certified, non-toxic cleaning agents safe for kids and pets.' },
+  { n: '03', title: 'Trained Professionals', desc: 'Every cleaner is background-checked, trained, and held to strict quality standards.' },
+  { n: '04', title: 'Flexible Scheduling', desc: 'Early mornings, evenings, or weekends — we work around your schedule.' },
+  { n: '05', title: '100% Satisfaction Guarantee', desc: "Not happy? We'll re-clean at no cost. Your satisfaction is our commitment." },
+  { n: '06', title: 'Transparent Pricing', desc: 'No hidden fees. No surprise charges. Just clear, fair pricing every time.' },
+]
+
+const TESTIMONIALS = [
+  { name: 'Sarah M.', role: 'Homeowner · Rancho Santa Margarita', avatar: 'photo-1534528741775-53994a69daeb', stars: 5, text: "E Liz transformed my home. The deep clean was incredibly thorough — they got areas I never even thought about. I now have them come every two weeks.", featured: false },
+  { name: 'James R.', role: 'Business Owner · Irvine', avatar: 'photo-1472099645785-5658abf4ff4e', stars: 5, text: "Professional, punctual, and absolutely meticulous. E Liz handles our office cleaning and the results are consistently excellent. Our team loves coming into a clean workspace.", featured: true },
+  { name: 'Emily K.', role: 'Property Manager · Mission Viejo', avatar: 'photo-1580489944761-15a19d654956', stars: 5, text: "I've tried several cleaning services and none compare to E Liz. The move-out clean was exceptional — my landlord was amazed. I got my full deposit back!", featured: false },
 ]
 
 export default function Home() {
@@ -55,239 +40,213 @@ export default function Home() {
     <>
       <Navbar />
 
-      <section className="relative text-white overflow-hidden min-h-[90vh] flex items-center">
-        <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?w=1920&q=80"
-            alt="Professional cleaning service"
-            className="w-full h-full object-cover scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-900/95 via-navy-900/75 to-navy-900/30" />
+      {/* ── HERO ── */}
+      <section className="relative min-h-[92vh] flex items-center overflow-hidden" style={{ background: '#060810' }}>
+        <div className="absolute inset-0 pointer-events-none">
+          <img src="https://images.unsplash.com/photo-1556784824-073f052be5be?w=1600&auto=format&fit=crop&q=70" alt="" className="w-full h-full object-cover" style={{ opacity: 0.07 }} />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 lg:py-56 w-full">
-          <div className="max-w-2xl">
-            <ScrollReveal>
-              <span className="inline-flex items-center gap-2 bg-brand-500/20 text-brand-300 text-sm font-semibold px-4 py-1.5 rounded-full mb-6 backdrop-blur-sm border border-brand-500/30">
-                <span className="w-1.5 h-1.5 bg-brand-500 rounded-full" />
-                Premium Cleaning Services
-              </span>
-              <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
-                Your Space,<br />
-                <span className="text-brand-400">Impeccably Clean</span>
+        <div className="orb" style={{ width: 600, height: 600, top: '-120px', left: '-150px', background: 'rgba(201,169,110,0.12)', animationDuration: '14s' }} />
+        <div className="orb" style={{ width: 440, height: 440, bottom: '-80px', right: '10%', background: 'rgba(100,120,200,0.07)', animationDuration: '10s', animationDelay: '-5s' }} />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="section-label mb-6">Orange County's Finest</div>
+              <h1 className="section-title mb-7 max-w-[560px]" style={{ fontSize: 'clamp(40px, 5vw, 70px)' }}>
+                Cleaning That Feels Like{' '}
+                <span className="gold-text">Luxury</span>
               </h1>
-              <p className="text-lg lg:text-xl text-gray-300 mb-10 max-w-xl leading-relaxed">
-                Reliable, thorough cleaning services for your home or business in Orange County. We make your space sparkle so you can focus on what matters.
+              <p className="text-lg leading-relaxed mb-10 max-w-[480px]" style={{ color: '#8d9db5' }}>
+                E Liz LLC delivers premium residential and commercial cleaning across Rancho Santa Margarita and Orange County — with the attention to detail your space deserves.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/booking" className="btn-primary text-center text-lg">
-                  Request a Free Quote
-                </Link>
-                <Link to="/services" className="btn-secondary text-center text-lg">
-                  Our Services
-                </Link>
+              <div className="flex flex-wrap gap-4 mb-12">
+                <Link to="/booking" className="btn-primary">Book a Cleaning</Link>
+                <Link to="/services" className="btn-secondary">Explore Services</Link>
               </div>
-            </ScrollReveal>
+              <div className="flex flex-wrap gap-3">
+                {['Fully Insured & Bonded', 'Eco-Friendly Products', '100% Satisfaction Guarantee'].map(text => (
+                  <div key={text} className="trust-chip">
+                    <div className="trust-chip-icon"><span className="text-[11px] font-bold" style={{ color: '#060810' }}>✓</span></div>
+                    <span className="text-[12.5px] font-medium" style={{ color: '#c9d0db' }}>{text}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="hidden lg:flex items-center justify-center">
+              <div className="relative w-[480px] h-[540px] rounded-3xl overflow-hidden" style={{ boxShadow: '0 40px 100px rgba(0,0,0,0.6)' }}>
+                <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=960&auto=format&fit=crop&q=80" alt="Premium cleaning" className="w-full h-full object-cover" />
+                <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 60%, rgba(6,8,16,0.5))' }} />
+                <div className="absolute bottom-6 left-6 right-6 glass rounded-2xl p-4 flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: 'linear-gradient(135deg,#c9a96e,#b89450)' }}>
+                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#060810" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" /></svg>
+                  </div>
+                  <div>
+                    <div className="text-[13px] font-bold" style={{ color: '#f2f4f8' }}>5.0 Star Rating</div>
+                    <div className="text-[12px]" style={{ color: '#6b7280' }}>Based on 200+ reviews</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="py-24 bg-white">
+      {/* ── SERVICES BENTO ── */}
+      <section className="py-24 lg:py-32" style={{ background: 'var(--bg-surface)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+          <ScrollReveal className="text-center mb-14">
+            <div className="section-label justify-center mb-4">What We Offer</div>
+            <h2 className="section-title">Our Services</h2>
+            <p className="section-subtitle">Every space is unique. Every clean is customized.</p>
+          </ScrollReveal>
+          <div className="bento-grid">
+            {SERVICES.map(svc => (
+              <ScrollReveal key={svc.label} className={`scard ${svc.cls}`}>
+                <img src={`https://images.unsplash.com/${svc.img}?w=800&auto=format&fit=crop&q=70`} alt={svc.title} />
+                <div className="scard-overlay">
+                  <div className="text-[10.5px] font-bold tracking-widest uppercase mb-2" style={{ color: '#c9a96e' }}>{svc.label}</div>
+                  <h3 className="font-heading font-bold text-[22px] leading-tight mb-2" style={{ color: '#f2f4f8' }}>{svc.title}</h3>
+                  <p className="text-[13.5px]" style={{ color: '#8d9db5' }}>{svc.desc}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <Link to="/services" className="btn-outline">View All Services</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── ABOUT SPLIT ── */}
+      <section className="py-24 lg:py-32" style={{ background: 'var(--bg-base)' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
             <ScrollReveal animation="scroll-animate-left">
               <div className="relative">
-                <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
-                  <img
-                    src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=800&q=80"
-                    alt="Professional cleaning team"
-                    className="w-full h-full object-cover"
-                  />
+                <div className="rounded-3xl overflow-hidden" style={{ height: 500, boxShadow: '0 30px 80px rgba(0,0,0,0.5)' }}>
+                  <img src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=900&auto=format&fit=crop&q=80" alt="E Liz team" className="w-full h-full object-cover" />
                 </div>
-                <div className="absolute -bottom-6 -right-6 bg-brand-500 text-navy-900 p-6 rounded-2xl shadow-xl hidden lg:block">
-                  <p className="text-3xl font-bold font-heading">10+</p>
-                  <p className="text-sm font-semibold">Years Experience</p>
+                <div className="absolute -bottom-5 -right-4 glass-warm rounded-2xl px-6 py-4">
+                  <div className="stat-num" style={{ fontSize: 42 }}>8+</div>
+                  <div className="text-[12.5px] font-medium" style={{ color: '#c9a96e' }}>Years of Excellence</div>
                 </div>
               </div>
             </ScrollReveal>
             <ScrollReveal animation="scroll-animate-right">
-              <div>
-                <span className="text-brand-600 font-semibold text-sm uppercase tracking-[0.2em]">About Us</span>
-                <h2 className="text-4xl lg:text-5xl font-bold mt-4 mb-6 gold-underline">
-                  Trusted Cleaning Experts
-                </h2>
-                <p className="text-gray-500 mb-4 leading-relaxed">
-                  E Liz LLC has built a reputation as a premier provider of residential and commercial cleaning solutions in Rancho Santa Margarita and throughout Orange County. Our continuous pursuit of perfection has resulted in consistent growth and a loyal client base.
-                </p>
-                <p className="text-gray-500 mb-8 leading-relaxed">
-                  We listen to our clients, understand their needs, and deliver exceptional cleaning services using eco-friendly products and advanced techniques. Your space deserves nothing less than spotless.
-                </p>
-                <Link to="/booking" className="btn-outline">
-                  Get a Free Quote
-                  <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                </Link>
+              <div className="section-label mb-5">Our Story</div>
+              <h2 className="section-title mb-6">More Than a Cleaning Service</h2>
+              <p className="text-[16px] leading-relaxed mb-6" style={{ color: '#8d9db5' }}>
+                E Liz LLC was founded on a simple belief: everyone deserves to come home — or go to work — in a space that is truly clean. We bring that standard to every job in Rancho Santa Margarita and across Orange County.
+              </p>
+              <p className="text-[16px] leading-relaxed mb-10" style={{ color: '#6b7280' }}>
+                Our team of trained, background-checked professionals uses eco-friendly products and proven techniques to deliver results that speak for themselves.
+              </p>
+              <div className="grid grid-cols-2 gap-4 mb-10">
+                {['Background-checked team', 'Eco-friendly products', 'Fully insured & bonded', '100% satisfaction guarantee'].map(item => (
+                  <div key={item} className="flex items-center gap-3">
+                    <div className="gold-check">✓</div>
+                    <span className="text-[13.5px]" style={{ color: '#c9d0db' }}>{item}</span>
+                  </div>
+                ))}
               </div>
+              <Link to="/about" className="btn-primary">Learn More About Us</Link>
             </ScrollReveal>
           </div>
         </div>
       </section>
 
-      <section className="py-24 bg-brand-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ScrollReveal>
-            <div className="text-center mb-16">
-              <span className="text-brand-600 font-semibold text-sm uppercase tracking-[0.2em]">Our Services</span>
-              <h2 className="section-title mt-3 gold-underline gold-underline-center">Professional Cleaning Solutions</h2>
-              <p className="section-subtitle">Comprehensive cleaning solutions tailored to your specific needs.</p>
-            </div>
-          </ScrollReveal>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {serviceList.map((service, i) => (
-              <ScrollReveal key={i}>
-                <div className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100">
-                  <div className="aspect-[4/3] overflow-hidden">
-                    <img
-                      src={service.img}
-                      alt={service.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
-                  </div>
-                  <div className="p-6 lg:p-8">
-                    <h3 className="text-xl font-bold text-navy-700 mb-3 font-heading">{service.title}</h3>
-                    <p className="text-gray-500 text-sm mb-5 leading-relaxed">{service.desc}</p>
-                    <Link to="/booking" className="text-brand-600 font-semibold text-sm hover:text-brand-700 transition-colors inline-flex items-center gap-1 group/link">
-                      Book Now
-                      <svg className="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-                    </Link>
-                  </div>
-                </div>
+      {/* ── STATS ── */}
+      <section style={{ background: 'rgba(201,169,110,0.05)', borderTop: '1px solid rgba(201,169,110,0.10)', borderBottom: '1px solid rgba(201,169,110,0.10)' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 text-center">
+            {STATS.map((s, i) => (
+              <ScrollReveal key={s.label} style={{ transitionDelay: `${i * 80}ms` }}>
+                <div className="stat-num">{s.num}</div>
+                <div className="text-[13px] font-semibold tracking-wide mt-2 uppercase" style={{ color: '#6b7280' }}>{s.label}</div>
               </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-24 bg-white">
+      {/* ── WHY CHOOSE US ── */}
+      <section className="py-24 lg:py-32" style={{ background: 'var(--bg-surface)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
             <ScrollReveal animation="scroll-animate-left">
-              <div>
-                <span className="text-brand-600 font-semibold text-sm uppercase tracking-[0.2em]">Why Choose Us</span>
-                <h2 className="text-4xl lg:text-5xl font-bold mt-4 mb-10 gold-underline">
-                  We Take Pride in Our Work
-                </h2>
-                <div className="space-y-8">
-                  {whyChoose.map((item, i) => (
-                    <div key={i} className="flex items-start gap-5">
-                      <div className="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
-                        <svg className="w-5 h-5 text-brand-600" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-bold text-navy-700 mb-1">{item.title}</h3>
-                        <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
-                      </div>
+              <div className="section-label mb-5">Why E Liz</div>
+              <h2 className="section-title mb-6">The Standard You Deserve</h2>
+              <p className="text-[16px] leading-relaxed mb-8" style={{ color: '#8d9db5' }}>
+                We go beyond surface-level cleaning. Our commitment is to deliver a level of quality that sets us apart from every other service in Orange County.
+              </p>
+              <div className="relative rounded-2xl overflow-hidden" style={{ height: 340, boxShadow: '0 20px 60px rgba(0,0,0,0.4)' }}>
+                <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&auto=format&fit=crop&q=75" alt="Why choose E Liz" className="w-full h-full object-cover" />
+              </div>
+            </ScrollReveal>
+            <div className="space-y-4">
+              {WHY.map((item, i) => (
+                <ScrollReveal key={item.n} style={{ transitionDelay: `${i * 60}ms` }}>
+                  <div className="flex gap-4 p-5 rounded-xl" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)' }}>
+                    <div className="num-badge">{item.n}</div>
+                    <div>
+                      <div className="font-heading font-bold text-[16px] mb-1" style={{ color: '#f2f4f8' }}>{item.title}</div>
+                      <div className="text-[13.5px] leading-relaxed" style={{ color: '#6b7280' }}>{item.desc}</div>
                     </div>
-                  ))}
-                </div>
-              </div>
-            </ScrollReveal>
-            <ScrollReveal animation="scroll-animate-right">
-              <div className="relative">
-                <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-xl">
-                  <img
-                    src="https://images.unsplash.com/photo-1563453392212-326f5e854473?w=800&q=80"
-                    alt="Professional cleaning equipment"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="absolute -top-4 -left-4 w-24 h-24 bg-brand-500 rounded-2xl flex items-center justify-center shadow-lg hidden lg:flex">
-                  <svg className="w-10 h-10 text-navy-900" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-                </div>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-navy-700 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-brand-500 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-500 rounded-full blur-3xl" />
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {[
-              { num: "500+", label: "Happy Customers" },
-              { num: "1K+", label: "Projects Completed" },
-              { num: "6", label: "Service Categories" },
-              { num: "100%", label: "Satisfaction Rate" },
-            ].map((stat, i) => (
-              <ScrollReveal key={i}>
-                <div className="p-6">
-                  <p className="text-4xl lg:text-5xl font-bold text-brand-400 font-heading">{stat.num}</p>
-                  <p className="text-gray-300 text-sm mt-2 uppercase tracking-wider">{stat.label}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-24 bg-brand-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ScrollReveal>
-            <div className="text-center mb-16">
-              <span className="text-brand-600 font-semibold text-sm uppercase tracking-[0.2em]">Testimonials</span>
-              <h2 className="section-title mt-3 gold-underline gold-underline-center">What Our Clients Say</h2>
-              <p className="section-subtitle">Don't just take our word for it — hear from our satisfied customers.</p>
+                  </div>
+                </ScrollReveal>
+              ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── TESTIMONIALS ── */}
+      <section className="py-24 lg:py-32" style={{ background: 'var(--bg-base)' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal className="text-center mb-14">
+            <div className="section-label justify-center mb-4">Client Stories</div>
+            <h2 className="section-title">What Our Clients Say</h2>
           </ScrollReveal>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((t, i) => (
-              <ScrollReveal key={i}>
-                <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300">
-                  <div className="flex gap-1 mb-4">
-                    {[...Array(5)].map((_, j) => (
-                      <span key={j} className={`text-lg ${j < t.rating ? 'text-brand-500' : 'text-gray-200'}`}>★</span>
-                    ))}
-                  </div>
-                  <p className="text-gray-600 mb-6 italic leading-relaxed text-sm">"{t.content}"</p>
+          <div className="grid md:grid-cols-3 gap-6">
+            {TESTIMONIALS.map((t, i) => (
+              <ScrollReveal key={t.name} style={{ transitionDelay: `${i * 80}ms` }}>
+                <div className={t.featured ? 'tcard-featured' : 'tcard'} style={{ height: '100%' }}>
+                  {t.featured && (
+                    <div className="absolute top-0 right-0 text-[10.5px] font-bold tracking-widest uppercase px-4 py-2 rounded-bl-xl rounded-tr-[18px]" style={{ background: 'rgba(201,169,110,0.20)', color: '#c9a96e' }}>Featured</div>
+                  )}
+                  <div className="flex gap-1 mb-5">{Array(t.stars).fill(0).map((_, si) => <span key={si} style={{ color: '#c9a96e', fontSize: 16 }}>★</span>)}</div>
+                  <p className="text-[14.5px] leading-relaxed mb-6" style={{ color: '#c9d0db' }}>"{t.text}"</p>
                   <div className="flex items-center gap-3">
-                    <img src={t.img} alt={t.name} className="w-12 h-12 rounded-full object-cover border-2 border-brand-200" />
-                    <span className="font-semibold text-navy-700 text-sm">{t.name}</span>
+                    <img src={`https://images.unsplash.com/${t.avatar}?w=80&h=80&fit=crop&auto=format`} alt={t.name} className="w-11 h-11 rounded-full object-cover" style={{ border: '2px solid rgba(201,169,110,0.25)' }} />
+                    <div>
+                      <div className="text-[14px] font-semibold" style={{ color: '#f2f4f8' }}>{t.name}</div>
+                      <div className="text-[12px]" style={{ color: '#6b7280' }}>{t.role}</div>
+                    </div>
                   </div>
                 </div>
               </ScrollReveal>
             ))}
           </div>
-          <div className="text-center mt-12">
-            <Link to="/testimonials" className="btn-outline">View All Reviews</Link>
+          <div className="text-center mt-10">
+            <Link to="/testimonials" className="btn-secondary">Read More Reviews</Link>
           </div>
         </div>
       </section>
 
-      <section className="py-24 bg-navy-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1920&q=80"
-            alt=""
-            className="w-full h-full object-cover opacity-10"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/95 to-navy-900/80" />
-        </div>
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* ── CTA ── */}
+      <section className="relative py-24 overflow-hidden" style={{ background: 'var(--bg-surface)' }}>
+        <div className="orb" style={{ width: 500, height: 500, top: '-100px', left: '50%', transform: 'translateX(-50%)', background: 'rgba(201,169,110,0.09)' }} />
+        <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <ScrollReveal>
-            <span className="inline-flex items-center gap-2 bg-brand-500/20 text-brand-300 text-sm font-semibold px-4 py-1.5 rounded-full mb-6 border border-brand-500/30">
-              Get Started Today
-            </span>
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6 font-heading">
-              Ready for a Spotless Space?
-            </h2>
-            <p className="text-gray-400 mb-10 text-lg max-w-2xl mx-auto leading-relaxed">
-              Get your free, no-obligation quote today and experience the E Liz LLC difference. We'll make your space shine.
+            <div className="section-label justify-center mb-5">Get Started Today</div>
+            <h2 className="section-title mb-5">Ready for a Spotless Space?</h2>
+            <p className="text-[16px] leading-relaxed mb-10" style={{ color: '#6b7280' }}>
+              Book your first cleaning online in under 2 minutes. No commitments, no hidden fees — just exceptional results.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/booking" className="btn-primary text-lg">Get Your Free Quote</Link>
-              <Link to="/contact" className="btn-secondary text-lg">Contact Us</Link>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link to="/booking" className="btn-primary">Book Now</Link>
+              <Link to="/contact" className="btn-secondary">Contact Us</Link>
             </div>
           </ScrollReveal>
         </div>
