@@ -7,7 +7,7 @@ import ScrollReveal from '../components/ScrollReveal'
 const SERVICES = [
   { cls: 'bento-1', img: 'photo-1513694203232-719a280e022f', label: 'Residential', title: 'Home Cleaning', desc: 'Meticulous, detail-oriented cleaning for every room in your home.' },
   { cls: 'bento-2', img: 'photo-1497366216548-37526070297c', label: 'Commercial', title: 'Office & Commercial', desc: 'Professional environments stay pristine and productive.' },
-  { cls: 'bento-3', img: 'photo-1556909011-8b5df82a9c95', label: 'Deep Clean', title: 'Deep Cleaning', desc: 'Every corner addressed. Every surface restored.' },
+  { cls: 'bento-3', img: 'photo-1585771724684-38269d6639fd', label: 'Deep Clean', title: 'Deep Cleaning', desc: 'Every corner addressed. Every surface restored.' },
   { cls: 'bento-4', img: 'photo-1560185007-cde436f6a4d0', label: 'Move In/Out', title: 'Move In / Out', desc: 'Leave the old place spotless. Arrive to a fresh one.' },
   { cls: 'bento-5', img: 'photo-1504307651254-35680f356dfd', label: 'Post-Construction', title: 'Post-Construction', desc: 'Construction dust and debris cleared efficiently.' },
   { cls: 'bento-6', img: 'photo-1615529182904-14819c35db37', label: 'Recurring', title: 'Recurring Maintenance', desc: 'Scheduled weekly, bi-weekly, or monthly service.' },

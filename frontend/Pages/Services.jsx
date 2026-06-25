@@ -18,7 +18,7 @@ const SERVICES = [
     includes: ['Workstations cleaned', 'Common areas maintained', 'Restrooms sanitized', 'Floors vacuumed & mopped'],
   },
   {
-    img: 'photo-1556909011-8b5df82a9c95',
+    img: 'photo-1585771724684-38269d6639fd',
     title: 'Deep Cleaning',
     desc: 'Thorough deep clean of neglected areas — appliances, baseboards, grout, and hard-to-reach spots. Ideal for spring cleaning, seasonal resets, or before moving in.',
     includes: ['Inside appliances cleaned', 'Baseboards & trim scrubbed', 'Grout & tile detailed', 'Cabinet interiors wiped'],
