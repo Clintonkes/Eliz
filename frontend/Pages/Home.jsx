@@ -38,16 +38,16 @@ const serviceList = [
 ]
 
 const testimonials = [
-  { name: "Sarah Johnson", content: "Greerz cleaned my home today - they did a terrific job. They really paid attention to detail. Thank you!", rating: 5, img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" },
+  { name: "Sarah Johnson", content: "E Liz LLC cleaned my home today — they did a terrific job. They really paid attention to detail. Thank you!", rating: 5, img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" },
   { name: "Michael Chen", content: "Best cleaning service I've ever used. They pay attention to every detail and our home has never looked better.", rating: 5, img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" },
-  { name: "Emily Rodriguez", content: "After our construction project, Greerz cleaned it all up perfectly. Saved us so much time and stress!", rating: 5, img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" },
+  { name: "Emily Rodriguez", content: "After our construction project, E Liz LLC cleaned it all up perfectly. Saved us so much time and stress!", rating: 5, img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" },
 ]
 
 const whyChoose = [
   { title: "Professional Staff", desc: "Our team is trained, experienced, and committed to delivering exceptional cleaning results every time." },
-  { title: "Quality Products", desc: "We use eco-friendly, hospital-grade cleaning products that are safe for your family, pets, and the environment." },
+  { title: "Quality Products", desc: "We use eco-friendly, hospital-grade cleaning products that are safe for your family, pets, and environment." },
   { title: "Certified Cleaners", desc: "All our cleaners are fully certified, background-checked, and trained in the latest cleaning techniques." },
-  { title: "Fair Prices", desc: "Competitive pricing with no hidden fees. Get premium cleaning services at rates that work for your budget." },
+  { title: "Fair & Transparent Pricing", desc: "Competitive pricing with no hidden fees. Get premium cleaning services at rates that work for your budget." },
 ]
 
 export default function Home() {
@@ -55,33 +55,34 @@ export default function Home() {
     <>
       <Navbar />
 
-      <section className="relative text-white overflow-hidden min-h-[85vh] flex items-center">
+      <section className="relative text-white overflow-hidden min-h-[90vh] flex items-center">
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?w=1920&q=80"
             alt="Professional cleaning service"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-primary-dark)]/90 via-[var(--color-primary-dark)]/70 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-900/95 via-navy-900/75 to-navy-900/30" />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 lg:py-48 w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 lg:py-56 w-full">
           <div className="max-w-2xl">
             <ScrollReveal>
-              <span className="inline-block bg-white/15 text-green-200 text-sm font-semibold px-4 py-1.5 rounded-full mb-6 backdrop-blur">
-                Professional Cleaning Services
+              <span className="inline-flex items-center gap-2 bg-brand-500/20 text-brand-300 text-sm font-semibold px-4 py-1.5 rounded-full mb-6 backdrop-blur-sm border border-brand-500/30">
+                <span className="w-1.5 h-1.5 bg-brand-500 rounded-full" />
+                Premium Cleaning Services
               </span>
-              <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                We Clean to the<br />
-                <span className="text-green-300">Highest Standards</span>
+              <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
+                Your Space,<br />
+                <span className="text-brand-400">Impeccably Clean</span>
               </h1>
-              <p className="text-lg lg:text-xl text-green-200 mb-10 max-w-xl leading-relaxed">
-                Reliable and efficient cleaning services for your home or business. We make your space sparkle so you can focus on what matters.
+              <p className="text-lg lg:text-xl text-gray-300 mb-10 max-w-xl leading-relaxed">
+                Reliable, thorough cleaning services for your home or business in Orange County. We make your space sparkle so you can focus on what matters.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/booking" className="btn-primary text-center text-lg bg-white !text-[var(--color-primary-dark)] hover:!bg-green-100 !shadow-lg">
+                <Link to="/booking" className="btn-primary text-center text-lg">
                   Request a Free Quote
                 </Link>
-                <Link to="/services" className="bg-white/10 backdrop-blur text-white font-semibold py-3 px-8 rounded-lg border border-white/20 hover:bg-white/20 transition-all text-center text-lg">
+                <Link to="/services" className="btn-secondary text-center text-lg">
                   Our Services
                 </Link>
               </div>
@@ -90,9 +91,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
             <ScrollReveal animation="scroll-animate-left">
               <div className="relative">
                 <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
@@ -102,22 +103,26 @@ export default function Home() {
                     className="w-full h-full object-cover"
                   />
                 </div>
+                <div className="absolute -bottom-6 -right-6 bg-brand-500 text-navy-900 p-6 rounded-2xl shadow-xl hidden lg:block">
+                  <p className="text-3xl font-bold font-heading">10+</p>
+                  <p className="text-sm font-semibold">Years Experience</p>
+                </div>
               </div>
             </ScrollReveal>
             <ScrollReveal animation="scroll-animate-right">
               <div>
-                <span className="text-[var(--color-primary)] font-semibold text-sm uppercase tracking-widest">About Us</span>
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3 mb-6" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                  We Clean to the Highest Standards
+                <span className="text-brand-600 font-semibold text-sm uppercase tracking-[0.2em]">About Us</span>
+                <h2 className="text-4xl lg:text-5xl font-bold mt-4 mb-6 gold-underline">
+                  Trusted Cleaning Experts
                 </h2>
                 <p className="text-gray-500 mb-4 leading-relaxed">
-                  Greerz LLC has built a reputation as one of the leading providers of residential and commercial cleaning solutions in Netcong, New Jersey and surrounding areas. Our continuous pursuit for perfection has resulted in consistent growth.
+                  E Liz LLC has built a reputation as a premier provider of residential and commercial cleaning solutions in Rancho Santa Margarita and throughout Orange County. Our continuous pursuit of perfection has resulted in consistent growth and a loyal client base.
                 </p>
-                <p className="text-gray-500 mb-6 leading-relaxed">
-                  Our focus is to listen to our clients, understand their needs, and provide the exceptional level of cleaning service they deserve. Our professional team uses eco-friendly products and advanced techniques to ensure your space is not just clean, but truly spotless.
+                <p className="text-gray-500 mb-8 leading-relaxed">
+                  We listen to our clients, understand their needs, and deliver exceptional cleaning services using eco-friendly products and advanced techniques. Your space deserves nothing less than spotless.
                 </p>
-                <Link to="/booking" className="btn-primary">
-                  Request a Free Quote
+                <Link to="/booking" className="btn-outline">
+                  Get a Free Quote
                   <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                 </Link>
               </div>
@@ -126,19 +131,19 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 bg-[var(--color-bg-alt)]">
+      <section className="py-24 bg-brand-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center mb-16">
-              <span className="text-[var(--color-primary)] font-semibold text-sm uppercase tracking-widest">Our Services</span>
-              <h2 className="section-title mt-3">Professional Cleaning Solutions</h2>
+              <span className="text-brand-600 font-semibold text-sm uppercase tracking-[0.2em]">Our Services</span>
+              <h2 className="section-title mt-3 gold-underline gold-underline-center">Professional Cleaning Solutions</h2>
               <p className="section-subtitle">Comprehensive cleaning solutions tailored to your specific needs.</p>
             </div>
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {serviceList.map((service, i) => (
               <ScrollReveal key={i}>
-                <div className="group card card-hover overflow-hidden">
+                <div className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100">
                   <div className="aspect-[4/3] overflow-hidden">
                     <img
                       src={service.img}
@@ -146,12 +151,12 @@ export default function Home() {
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-3" style={{ fontFamily: "'DM Sans', sans-serif" }}>{service.title}</h3>
-                    <p className="text-gray-500 text-sm mb-4 leading-relaxed">{service.desc}</p>
-                    <Link to="/booking" className="text-[var(--color-primary)] font-semibold text-sm hover:text-[var(--color-primary-dark)] transition-colors inline-flex items-center gap-1">
+                  <div className="p-6 lg:p-8">
+                    <h3 className="text-xl font-bold text-navy-700 mb-3 font-heading">{service.title}</h3>
+                    <p className="text-gray-500 text-sm mb-5 leading-relaxed">{service.desc}</p>
+                    <Link to="/booking" className="text-brand-600 font-semibold text-sm hover:text-brand-700 transition-colors inline-flex items-center gap-1 group/link">
                       Book Now
-                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                      <svg className="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                     </Link>
                   </div>
                 </div>
@@ -161,23 +166,23 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
             <ScrollReveal animation="scroll-animate-left">
               <div>
-                <span className="text-[var(--color-primary)] font-semibold text-sm uppercase tracking-widest">Why Choose Us</span>
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3 mb-10" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                <span className="text-brand-600 font-semibold text-sm uppercase tracking-[0.2em]">Why Choose Us</span>
+                <h2 className="text-4xl lg:text-5xl font-bold mt-4 mb-10 gold-underline">
                   We Take Pride in Our Work
                 </h2>
                 <div className="space-y-8">
                   {whyChoose.map((item, i) => (
-                    <div key={i} className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-[var(--color-primary-lightest)] rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
-                        <svg className="w-5 h-5 text-[var(--color-primary)]" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+                    <div key={i} className="flex items-start gap-5">
+                      <div className="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+                        <svg className="w-5 h-5 text-brand-600" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
                       </div>
                       <div>
-                        <h3 className="text-lg font-bold text-gray-900 mb-1" style={{ fontFamily: "'DM Sans', sans-serif" }}>{item.title}</h3>
+                        <h3 className="text-lg font-bold text-navy-700 mb-1">{item.title}</h3>
                         <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
                       </div>
                     </div>
@@ -186,20 +191,29 @@ export default function Home() {
               </div>
             </ScrollReveal>
             <ScrollReveal animation="scroll-animate-right">
-              <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-xl">
-                <img
+              <div className="relative">
+                <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-xl">
+                  <img
                     src="https://images.unsplash.com/photo-1563453392212-326f5e854473?w=800&q=80"
-                  alt="Professional cleaning equipment"
-                  className="w-full h-full object-cover"
-                />
+                    alt="Professional cleaning equipment"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="absolute -top-4 -left-4 w-24 h-24 bg-brand-500 rounded-2xl flex items-center justify-center shadow-lg hidden lg:flex">
+                  <svg className="w-10 h-10 text-navy-900" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                </div>
               </div>
             </ScrollReveal>
           </div>
         </div>
       </section>
 
-      <section className="py-16 bg-[var(--color-primary)]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-navy-700 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-brand-500 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-500 rounded-full blur-3xl" />
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
               { num: "500+", label: "Happy Customers" },
@@ -208,9 +222,9 @@ export default function Home() {
               { num: "100%", label: "Satisfaction Rate" },
             ].map((stat, i) => (
               <ScrollReveal key={i}>
-                <div>
-                  <p className="text-3xl lg:text-4xl font-bold text-white">{stat.num}</p>
-                  <p className="text-green-200 text-sm mt-2">{stat.label}</p>
+                <div className="p-6">
+                  <p className="text-4xl lg:text-5xl font-bold text-brand-400 font-heading">{stat.num}</p>
+                  <p className="text-gray-300 text-sm mt-2 uppercase tracking-wider">{stat.label}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -218,47 +232,62 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 bg-[var(--color-bg-alt)]">
+      <section className="py-24 bg-brand-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center mb-16">
-              <span className="text-[var(--color-primary)] font-semibold text-sm uppercase tracking-widest">Reviews</span>
-              <h2 className="section-title mt-3">What Our Clients Say</h2>
-              <p className="section-subtitle">Don't just take our word for it - hear from our satisfied customers.</p>
+              <span className="text-brand-600 font-semibold text-sm uppercase tracking-[0.2em]">Testimonials</span>
+              <h2 className="section-title mt-3 gold-underline gold-underline-center">What Our Clients Say</h2>
+              <p className="section-subtitle">Don't just take our word for it — hear from our satisfied customers.</p>
             </div>
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((t, i) => (
               <ScrollReveal key={i}>
-                <div className="card p-8 text-center">
-                  <div className="flex justify-center mb-4">
+                <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300">
+                  <div className="flex gap-1 mb-4">
                     {[...Array(5)].map((_, j) => (
-                      <span key={j} className={`text-lg ${j < t.rating ? 'text-green-400' : 'text-gray-200'}`}>★</span>
+                      <span key={j} className={`text-lg ${j < t.rating ? 'text-brand-500' : 'text-gray-200'}`}>★</span>
                     ))}
                   </div>
-                  <p className="text-gray-600 mb-6 italic leading-relaxed">"{t.content}"</p>
-                  <img src={t.img} alt={t.name} className="w-14 h-14 rounded-full object-cover mx-auto mb-3" />
-                  <p className="font-semibold text-gray-900 text-sm">{t.name}</p>
+                  <p className="text-gray-600 mb-6 italic leading-relaxed text-sm">"{t.content}"</p>
+                  <div className="flex items-center gap-3">
+                    <img src={t.img} alt={t.name} className="w-12 h-12 rounded-full object-cover border-2 border-brand-200" />
+                    <span className="font-semibold text-navy-700 text-sm">{t.name}</span>
+                  </div>
                 </div>
               </ScrollReveal>
             ))}
           </div>
           <div className="text-center mt-12">
-            <Link to="/testimonials" className="btn-secondary">View All Reviews</Link>
+            <Link to="/testimonials" className="btn-outline">View All Reviews</Link>
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-[var(--color-primary-dark)] text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-24 bg-navy-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1920&q=80"
+            alt=""
+            className="w-full h-full object-cover opacity-10"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/95 to-navy-900/80" />
+        </div>
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <ScrollReveal>
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6" style={{ fontFamily: "'DM Sans', sans-serif" }}>Ready for a Spotless Space?</h2>
-            <p className="text-green-200 mb-8 text-lg max-w-2xl mx-auto">
-              Get your free quote today and experience the Greerz difference. We'll make your space shine.
+            <span className="inline-flex items-center gap-2 bg-brand-500/20 text-brand-300 text-sm font-semibold px-4 py-1.5 rounded-full mb-6 border border-brand-500/30">
+              Get Started Today
+            </span>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6 font-heading">
+              Ready for a Spotless Space?
+            </h2>
+            <p className="text-gray-400 mb-10 text-lg max-w-2xl mx-auto leading-relaxed">
+              Get your free, no-obligation quote today and experience the E Liz LLC difference. We'll make your space shine.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/booking" className="bg-white text-[var(--color-primary-dark)] font-semibold py-3 px-8 rounded-lg hover:bg-green-100 transition-all text-lg">Get Your Free Quote</Link>
-              <Link to="/contact" className="bg-white/10 backdrop-blur text-white font-semibold py-3 px-8 rounded-lg border border-white/20 hover:bg-white/20 transition-all text-lg">Contact Us</Link>
+              <Link to="/booking" className="btn-primary text-lg">Get Your Free Quote</Link>
+              <Link to="/contact" className="btn-secondary text-lg">Contact Us</Link>
             </div>
           </ScrollReveal>
         </div>

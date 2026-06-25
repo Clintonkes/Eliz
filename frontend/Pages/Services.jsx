@@ -53,59 +53,62 @@ export default function Services() {
   return (
     <>
       <Navbar />
-      <section className="relative bg-[var(--color-primary-dark)] text-white py-24 lg:py-32">
+      <section className="relative bg-navy-900 text-white py-24 lg:py-32 overflow-hidden">
         <div className="absolute inset-0">
-          <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1920&q=80" alt="" className="w-full h-full object-cover opacity-20" />
+          <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1920&q=80" alt="" className="w-full h-full object-cover opacity-15" />
+          <div className="absolute inset-0 bg-gradient-to-b from-navy-900/60 to-navy-900" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="text-green-300 font-semibold text-sm uppercase tracking-widest">Services</span>
-          <h1 className="text-5xl lg:text-6xl font-bold mt-4 mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>Professional Cleaning Solutions</h1>
-          <p className="text-green-200 max-w-2xl mx-auto">Comprehensive cleaning solutions tailored to your specific needs.</p>
+          <span className="text-brand-400 font-semibold text-sm uppercase tracking-[0.2em]">Services</span>
+          <h1 className="text-5xl lg:text-6xl font-bold mt-4 mb-4">Professional Cleaning Solutions</h1>
+          <p className="text-gray-400 max-w-2xl mx-auto text-lg">Comprehensive cleaning solutions tailored to your specific needs.</p>
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-20 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center mb-16">
-              <span className="text-[var(--color-primary)] font-semibold text-sm uppercase tracking-widest">What We Do</span>
-              <h2 className="section-title mt-3">Professional Cleaning Solutions</h2>
-              <p className="section-subtitle">Comprehensive cleaning solutions tailored to your specific needs.</p>
+              <span className="text-brand-600 font-semibold text-sm uppercase tracking-[0.2em]">What We Do</span>
+              <h2 className="section-title mt-3 gold-underline gold-underline-center">Expert Cleaning Services</h2>
+              <p className="section-subtitle">Every service delivered with precision, care, and attention to detail.</p>
             </div>
           </ScrollReveal>
 
-          <div className="space-y-20">
+          <div className="space-y-24">
             {services.map((service, i) => (
               <ScrollReveal key={service.id}>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                   {i % 2 === 0 ? (
                     <>
-                      <div className="rounded-2xl overflow-hidden shadow-lg">
-                        <img src={service.img} alt={service.title} className="w-full aspect-square object-cover" />
+                      <div className="relative">
+                        <div className="rounded-2xl overflow-hidden shadow-xl">
+                          <img src={service.img} alt={service.title} className="w-full aspect-[4/3] object-cover" />
+                        </div>
+                        <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-brand-500 rounded-xl flex items-center justify-center shadow-lg hidden lg:flex">
+                          <svg className="w-8 h-8 text-navy-900" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={service.icon} /></svg>
+                        </div>
                       </div>
                       <div>
-                        <div className="w-16 h-16 bg-[var(--color-primary-lightest)] rounded-2xl flex items-center justify-center mb-6">
-                          <svg className="w-8 h-8 text-[var(--color-primary)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={service.icon} /></svg>
-                        </div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>{service.title}</h3>
-                        <p className="text-gray-500 mb-6 leading-relaxed">{service.description}</p>
-                        <Link to="/booking" className="btn-primary">Book This Service</Link>
+                        <h3 className="text-3xl font-bold text-navy-700 mb-4 font-heading">{service.title}</h3>
+                        <p className="text-gray-500 mb-8 leading-relaxed text-lg">{service.description}</p>
+                        <Link to="/booking" className="btn-outline">Book This Service</Link>
                       </div>
                     </>
                   ) : (
                     <>
-                      <div className="lg:order-2">
-                        <div className="rounded-2xl overflow-hidden shadow-lg">
-                          <img src={service.img} alt={service.title} className="w-full aspect-square object-cover" />
+                      <div className="lg:order-2 relative">
+                        <div className="rounded-2xl overflow-hidden shadow-xl">
+                          <img src={service.img} alt={service.title} className="w-full aspect-[4/3] object-cover" />
+                        </div>
+                        <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-brand-500 rounded-xl flex items-center justify-center shadow-lg hidden lg:flex">
+                          <svg className="w-8 h-8 text-navy-900" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={service.icon} /></svg>
                         </div>
                       </div>
                       <div className="lg:order-1">
-                        <div className="w-16 h-16 bg-[var(--color-primary-lightest)] rounded-2xl flex items-center justify-center mb-6">
-                          <svg className="w-8 h-8 text-[var(--color-primary)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={service.icon} /></svg>
-                        </div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>{service.title}</h3>
-                        <p className="text-gray-500 mb-6 leading-relaxed">{service.description}</p>
-                        <Link to="/booking" className="btn-primary">Book This Service</Link>
+                        <h3 className="text-3xl font-bold text-navy-700 mb-4 font-heading">{service.title}</h3>
+                        <p className="text-gray-500 mb-8 leading-relaxed text-lg">{service.description}</p>
+                        <Link to="/booking" className="btn-outline">Book This Service</Link>
                       </div>
                     </>
                   )}
@@ -116,14 +119,17 @@ export default function Services() {
         </div>
       </section>
 
-      <section className="py-16 bg-[var(--color-primary-dark)]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-20 bg-navy-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-500 rounded-full blur-3xl" />
+        </div>
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <ScrollReveal>
-            <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>Not Sure Which Service You Need?</h2>
-            <p className="text-green-200 mb-8">Contact us and we'll help you find the perfect cleaning solution.</p>
-            <Link to="/contact" className="inline-flex items-center gap-2 bg-white text-[var(--color-primary-dark)] font-semibold py-3 px-8 rounded-lg hover:bg-green-100 transition-all">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4 font-heading">Not Sure Which Service You Need?</h2>
+            <p className="text-gray-400 mb-8 text-lg">Contact us and we'll help you find the perfect cleaning solution.</p>
+            <Link to="/contact" className="btn-primary text-lg">
               Contact Us
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </Link>
           </ScrollReveal>
         </div>

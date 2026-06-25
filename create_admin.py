@@ -44,7 +44,7 @@ def prompt_password() -> str:
 
 
 def main() -> int:
-    print("Greez LLC admin bootstrap")
+    print("E Liz LLC admin bootstrap")
     print(f"Database: {settings.DATABASE_URL}")
     print(f"Using engine: {engine.url}")
 

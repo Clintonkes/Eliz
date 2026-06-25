@@ -13,10 +13,10 @@ class Settings(BaseSettings):
 
     RESEND_API_KEY: str = os.getenv("RESEND_API_KEY", "")
     RESEND_FROM_EMAIL: str = os.getenv("RESEND_FROM_EMAIL", "Greerz LLC <no-reply@greerzcleaning.com>")
-    RESEND_FROM_NAME: str = os.getenv("RESEND_FROM_NAME", "Greerz LLC")
+    RESEND_FROM_NAME: str = os.getenv("RESEND_FROM_NAME", "E Liz LLC")
     PUBLIC_SITE_URL: str = os.getenv("PUBLIC_SITE_URL", "http://localhost:8000")
 
-    ADMIN_EMAIL: str = os.getenv("ADMIN_EMAIL", "harkllc@proton.me")
+    ADMIN_EMAIL: str = os.getenv("ADMIN_EMAIL", "")
     ADMIN_PASSWORD: str = os.getenv("ADMIN_PASSWORD", "change-this-password")
 
 settings = Settings()
